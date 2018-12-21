@@ -842,7 +842,8 @@ var app6 = new Vue({
 var testliff = new Vue({
 el: '#testliff',
 data: {
-  messageliff : '123'
+  messageliff : '123',
+  imgurl: ''
 },methods: {
 
  testliff: function () {
@@ -851,10 +852,12 @@ data: {
                     profile=> {
                         //顯示在text box中
                        this.messageliff = profile.displayName;
+                       this.imgurl = profile.getpictureUrl;
                         //居然可以alert
                         alert('HI!'+ profile.displayName);
                     }
                 );
+                
  }
 
 }
