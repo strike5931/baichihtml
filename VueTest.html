@@ -35,6 +35,12 @@
             </ol>
           </div>
 
+          <div id="testliff">
+            <p>{{messageliff}}</p>
+            <button v-on:click="testliff">testLiff</button>
+
+          </div>
+
           <div id="app-5">
                 <p>{{ message }}</p>
                 <button v-on:click="reverseMessage">Reverse Message</button>
@@ -833,7 +839,28 @@ var app6 = new Vue({
       }
     }
 })
+var testliff = new Vue({
+el: '#testliff',
+data: {
+  messageliff : '123'
+},methods: {
 
+ testliff: function () {
+   //取得User Proile
+   liff.getProfile().then(
+                    profile=> {
+                        //顯示在text box中
+                       this.messageliff = profile.displayName;
+                        //居然可以alert
+                        alert('done');
+                    }
+                );
+ }
+
+}
+
+
+})
     var app5 = new Vue({
   el: '#app-5',
   data: {
